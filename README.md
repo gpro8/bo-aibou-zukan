@@ -1,10 +1,8 @@
 # 相棒図鑑
 
-BushiDAO · BOの相棒図鑑（静的）。
+BushiDAO · BOの相棒図鑑。
 
-Local: `/Users/gpro/bo-aibou-zukan`
-
-Repo when ready: `gpro8/bo-aibou-zukan` (empty public → Pages `main` / root)
+https://gpro8.github.io/bo-aibou-zukan/
 
 ## 主 / 絵師が足す・直す
 
