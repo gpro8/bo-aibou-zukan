@@ -37,7 +37,7 @@ function padNo(n) {
 
 function cardHtml(e) {
   const owner = e.owner ? `主 ${esc(e.owner)}` : "主 未記入";
-  const tag = e.provisional ? `<span class="chip">仮</span>` : "";
+  const tag = "";
   return `<button class="card" type="button" data-id="${esc(e.id)}" aria-label="${esc(e.name)}">
     <div class="card-art"><img src="${esc(e.image)}" alt=""></div>
     <div class="card-meta">
@@ -60,27 +60,27 @@ function moreHtml(more) {
 }
 
 function modalHtml(e) {
-  const bits = [
+  const fromFields = (e.fields || [])
+    .filter((row) => Array.isArray(row) && row[0] && row[1])
+    .map(([k, v]) => sec(k, `<p>${esc(v)}</p>`));
+  const fallback = [
     sec("ひとこと", e.catchphrase ? `<p class="catch">${esc(e.catchphrase)}</p>` : ""),
-    sec("分類", e.species ? `<p>${esc(e.species)}${e.size ? ` · ${esc(e.size)}` : ""}</p>` : ""),
+    sec("種類", e.species ? `<p>${esc(e.species)}</p>` : ""),
     sec("属性", list(e.types).length ? `<p>${esc(e.types.join(" · "))}</p>` : ""),
-    sec("大きさ", e.height || e.weight ? `<p>${esc([e.height, e.weight].filter(Boolean).join(" · "))}</p>` : ""),
-    sec("特徴", bullets(e.traits)),
     sec("性格", bullets(e.personality)),
     sec("好き", bullets(e.likes)),
-    sec("苦手", bullets(e.dislikes)),
-    sec("できること", bullets(e.can)),
-    sec("弱点", bullets(e.weak)),
-    sec("まわり", bullets(e.around)),
-    sec("表情", bullets(e.faces)),
+    sec("特技", bullets(e.can)),
+    moreHtml(e.more),
+  ];
+  const bits = [
+    ...(fromFields.length ? fromFields : fallback),
     sec("主", `<p>${esc(e.owner || "未記入")}</p>`),
     sec("絵師", e.artist ? `<p>${esc(e.artist)}</p>` : ""),
-    moreHtml(e.more),
   ].join("");
   return `
     <div class="modal-head">
       <div>
-        <div class="no">${padNo(e.no)}${e.provisional ? " · 仮" : ""}</div>
+        <div class="no">${padNo(e.no)}</div>
         <h2>${esc(e.name)}</h2>
         <div class="en">${esc(e.nameEn || "")}</div>
       </div>
