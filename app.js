@@ -39,7 +39,7 @@ function cardHtml(e) {
   const owner = e.owner ? `主 ${esc(e.owner)}` : "主 未記入";
   const tag = "";
   return `<button class="card" type="button" data-id="${esc(e.id)}" aria-label="${esc(e.name)}">
-    <div class="card-art"><img src="${esc(e.image)}" alt=""></div>
+    <div class="card-art"><img src="${esc(e.image)}" alt="" width="640" height="640" loading="lazy" decoding="async"></div>
     <div class="card-meta">
       <div class="no">${padNo(e.no)}</div>
       <h2>${esc(e.name)} ${tag}</h2>
@@ -86,7 +86,7 @@ function modalHtml(e) {
       </div>
       <button class="close" type="button" data-close>閉じる</button>
     </div>
-    <div class="modal-art"><img src="${esc(e.image)}" alt="${esc(e.name)}"></div>
+    <div class="modal-art"><img src="${esc(e.image)}" alt="${esc(e.name)}" width="1254" height="1254" decoding="async"></div>
     <div class="sections">${bits}</div>`;
 }
 

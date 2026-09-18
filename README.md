@@ -10,6 +10,6 @@ SoT は **`data/entries.json` だけ**。HTML を直さない。
 
 - 新しい相棒: `entries` に1つ。`id` は英小文字（`#sumi`）
 - シート本文は `fields: [["種類","…"], …]` の順でポップアップに出る
-- 絵は `art/<id>.png`
+- 絵は `art/<id>.webp`（WebP q80。元PNGは載せない）
 - 出さない: `Kanamin-BO × BushiDAO`、仮
 - Gi・投票権・NFT は載せない

@@ -14,7 +14,7 @@
       "types": [],
       "owner": "カナミン",
       "artist": "",
-      "image": "art/mokopu.png",
+      "image": "art/mokopu.webp",
       "catchphrase": "ふわっと しあわせを おとどけ♪",
       "fields": [
         ["種類", "クリームソーダひつじ"],
@@ -41,7 +41,7 @@
       "types": ["光"],
       "owner": "Mimiko",
       "artist": "",
-      "image": "art/sumi.png",
+      "image": "art/sumi.webp",
       "catchphrase": "ずっと一緒にいようね",
       "fields": [
         ["種類", "黒うさぎの妖精"],
@@ -65,7 +65,7 @@
       "types": ["光"],
       "owner": "BO",
       "artist": "Mimiko",
-      "image": "art/mitsumaru.png",
+      "image": "art/mitsumaru.webp",
       "catchphrase": "いつも一緒だよ",
       "fields": [
         ["種類", "豆狸（たぬきの精）"],
